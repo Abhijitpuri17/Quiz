@@ -57,7 +57,7 @@ class QuizQuestionActivity : AppCompatActivity()
                 val jsonArr = response.getJSONArray("results")
                 val jsonQ = jsonArr.getJSONObject(0)
                 val que = jsonQ.getString("question").replace("&quot;" , "\"")
-                    .replace("&#039" , "'").replace("&shy;" , "-")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
                 val correctAns = jsonQ.getString("correct_answer")
                 val incorrectAr = jsonQ.getJSONArray("incorrect_answers")
 
