@@ -16,7 +16,7 @@
 
     class MainActivity : AppCompatActivity()
     {
-        lateinit var questionList : ArrayList<Question>
+
 
         override fun onCreate(savedInstanceState: Bundle?)
         {
