@@ -58,7 +58,10 @@ class QuizQuestionActivity : AppCompatActivity()
                 val jsonQ = jsonArr.getJSONObject(0)
                 val que = jsonQ.getString("question").replace("&quot;" , "\"")
                     .replace("&#039;" , "'").replace("&shy;" , "-")
-                val correctAns = jsonQ.getString("correct_answer")
+
+                val correctAns = jsonQ.getString("correct_answer").replace("&quot;" , "\"")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
+
                 val incorrectAr = jsonQ.getJSONArray("incorrect_answers")
 
                 tv_question.text = "Q.  $que"
@@ -70,25 +73,29 @@ class QuizQuestionActivity : AppCompatActivity()
                     tv_option1.text = correctAns
                     correctTV  = tv_option1
                 }
-                else tv_option1.text = incorrectAr.getString(i++)
+                else tv_option1.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
 
                 if (correctPos == 1) {
                     tv_option2.text = correctAns
                     correctTV = tv_option2
                 }
-                else tv_option2.text = incorrectAr.getString(i++)
+                else tv_option2.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
 
                 if (correctPos == 2){
                     tv_option3.text = correctAns
                     correctTV = tv_option3
                 }
-                else tv_option3.text = incorrectAr.getString(i++)
+                else tv_option3.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
 
                 if (correctPos == 3){
                     tv_option4.text = correctAns
                     correctTV = tv_option4
                 }
-                else tv_option4.text = incorrectAr.getString(i++)
+                else tv_option4.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
+                    .replace("&#039;" , "'").replace("&shy;" , "-")
 
             } ,
             {
