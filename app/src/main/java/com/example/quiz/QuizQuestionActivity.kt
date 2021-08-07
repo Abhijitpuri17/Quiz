@@ -60,7 +60,7 @@ class QuizQuestionActivity : AppCompatActivity()
                     .replace("&#039;" , "'").replace("&shy;" , "-")
 
                 val correctAns = jsonQ.getString("correct_answer").replace("&quot;" , "\"")
-                    .replace("&#039;" , "'").replace("&shy;" , "-")
+                    .replace("&#039;" , "'").replace("&shy;" , "-").replace("&amp" , "&")
 
                 val incorrectAr = jsonQ.getJSONArray("incorrect_answers")
 
@@ -75,6 +75,7 @@ class QuizQuestionActivity : AppCompatActivity()
                 }
                 else tv_option1.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
                     .replace("&#039;" , "'").replace("&shy;" , "-")
+                    .replace("&amp" , "&")
 
                 if (correctPos == 1) {
                     tv_option2.text = correctAns
@@ -82,6 +83,7 @@ class QuizQuestionActivity : AppCompatActivity()
                 }
                 else tv_option2.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
                     .replace("&#039;" , "'").replace("&shy;" , "-")
+                    .replace("&amp" , "&")
 
                 if (correctPos == 2){
                     tv_option3.text = correctAns
@@ -89,6 +91,7 @@ class QuizQuestionActivity : AppCompatActivity()
                 }
                 else tv_option3.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
                     .replace("&#039;" , "'").replace("&shy;" , "-")
+                    .replace("&amp" , "&")
 
                 if (correctPos == 3){
                     tv_option4.text = correctAns
@@ -96,6 +99,7 @@ class QuizQuestionActivity : AppCompatActivity()
                 }
                 else tv_option4.text = incorrectAr.getString(i++).replace("&quot;" , "\"")
                     .replace("&#039;" , "'").replace("&shy;" , "-")
+                    .replace("&amp" , "&")
 
             } ,
             {
